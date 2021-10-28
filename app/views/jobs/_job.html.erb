@@ -1,0 +1,14 @@
+<h3>
+    <%= job.title %>
+    <% if job.premium %>
+        <strong>(Premium)</strong>
+    <% else %>
+    <% end %>
+</h3>
+    <%= simple_format job.description%>
+
+<p>
+    <td><%= link_to 'Show', job %></td>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</p>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teste</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <div class="field">
+     <td>  <%= link_to 'Time', ola_mundo_path %> </td>
+      <td> <%= link_to 'Jobs', jobs_path %> </td>
+      <td> <%= link_to 'New Job', new_job_path %> </td>
+      <td> <%= link_to 'Premium Jobs', premium_jobs_path %> </td>
+    </div>
+  </body>
+</html>
