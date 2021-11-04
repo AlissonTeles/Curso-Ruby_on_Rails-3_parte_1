@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<!-- Mensagem quando exclui-->
+<% if flash[:alert]%>
+	<div class = "alert alert-danger" role = "alert"> <%= flash[:alert]%> </div>
+    
+<% end %>
+<!-- Mensagem quando atualiza e cria-->
+<% if flash[:notice1]%>
+	<div class= "alert alert-success" role = "alert"> <%= flash[:notice1]%> </div>
+<% end %>
+
 
 <h1>Jobs</h1>
 

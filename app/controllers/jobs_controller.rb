@@ -13,7 +13,7 @@ class JobsController < ApplicationController
   def show; end
 
   def premium
-    @job = Job.where(premium: true).all
+    @jobs = Job.where(premium: true).all
   end
   # GET /jobs/new
   def new
@@ -29,7 +29,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+        format.html { redirect_to @job, flash: { notice: 'Job was successfully created.'} }
         format.json { render :show, status: :created, location: @job }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +42,10 @@ class JobsController < ApplicationController
   def update
     respond_to do |format|
       if @job.update(job_params)
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
+        format.html { 
+          flash[:notice] = 'Job was successfully updated.'
+          redirect_to @job
+        }
         format.json { render :show, status: :ok, location: @job }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +58,7 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+      format.html { redirect_to jobs_url, flash: { alert: 'Job was successfully destroyed.'} }
       format.json { head :no_content }
     end
   end

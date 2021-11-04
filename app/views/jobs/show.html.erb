@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
+<!-- Mensagem quando atualiza e cria-->
+<% if flash[:notice]%>
+	<div class= "alert alert-success" role = "alert"> <%= flash[:notice]%> </div>
+<% end %>
 
+<br>
+
+<h3>
+  <strong>Title:</strong><br></h3>
 <p>
-  <strong>Title:</strong>
   <%= @job.title %>
 </p>
 
+<h3>
+  <strong>Description:</strong><br></h3>
 <p>
-  <strong>Description:</strong>
   <%= @job.description %>
 </p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Edit', edit_job_path(@job),class:'btn btn-outline-secondary btn-sm' %> 
+<%= link_to 'Back', jobs_path, class:'btn btn-outline-info btn-sm' %>

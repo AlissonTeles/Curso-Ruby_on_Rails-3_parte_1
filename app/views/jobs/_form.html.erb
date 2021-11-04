@@ -13,20 +13,20 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title , class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :premium %>
-    <%= form.check_box  :premium %>
+    <%= form.label :premium %><br>
+    <%= form.check_box  :premium , class:"form-check-input"%>
   </div>  
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :description %> 
+    <%= form.text_area :description , class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-primary" %>
   </div>
 <% end %>
